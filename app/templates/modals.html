@@ -1,0 +1,122 @@
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+              </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Investment Modal -->
+
+<div class="modal fade" id="InvestmentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Investment Amount</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <form class="modal-content animate" method="POST" action="{{ url_for('update_investment', investment_id=investment.investment_id) }}" >
+              {{ form.csrf_token }}
+                <div class="form-group">
+                    {{ form.investment_amount (placeholder="Investment Amount", class="form-control mb-2 border border-primary text-center", required="true") }}
+                    <!-- <input placeholder="Username" type="text" class="form-control mb-2 border border-primary">
+                    <input placeholder="Password" type="password" class="form-control mb-2 border border-primary"> -->
+                </div>
+                <!-- <input type="submit" name="login" hidden="true"> -->
+              <!-- <a href="/home" class="btn btn-primary rounded-pill" style="margin-left: 3	0%; width: 40%;">Log In</a> -->
+              {{ form.submit(class="btn btn-outline-info") }}
+          </form>
+
+      </div>
+      <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+         
+      </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="HectaresModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Total Hecatres Reforested</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <form class="modal-content animate" method="POST" action="{{ url_for('update_hectares', hectares_id=hectares.hectares_id) }}" >
+              {{ form2.csrf_token }}
+                <div class="form-group">
+                    {{ form2.hectares_total (placeholder="Hectares", class="form-control mb-2 border border-primary text-center", required="true") }}
+                    <!-- <input placeholder="Username" type="text" class="form-control mb-2 border border-primary">
+                    <input placeholder="Password" type="password" class="form-control mb-2 border border-primary"> -->
+                </div>
+                <!-- <input type="submit" name="login" hidden="true"> -->
+              <!-- <a href="/home" class="btn btn-primary rounded-pill" style="margin-left: 3	0%; width: 40%;">Log In</a> -->
+              {{ form2.submit(class="btn btn-outline-info") }}
+          </form>
+
+      </div>
+      <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+         
+      </div>
+  </div>
+</div>
+</div>
+
+<!--Reforestation-->
+
+<div class="modal fade" id="ReforestationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Total Rainforestation</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <form class="modal-content animate" method="POST" action="{{ url_for('update_reforestation', reforestation_id=reforestation.reforestation_id) }}" >
+              {{ form3.csrf_token }}
+                <div class="form-group">
+                    {{ form3.reforestation_total (placeholder="Reforestation", class="form-control mb-2 border border-primary text-center", required="true") }}
+                    <!-- <input placeholder="Username" type="text" class="form-control mb-2 border border-primary">
+                    <input placeholder="Password" type="password" class="form-control mb-2 border border-primary"> -->
+                </div>
+                <!-- <input type="submit" name="login" hidden="true"> -->
+              <!-- <a href="/home" class="btn btn-primary rounded-pill" style="margin-left: 3	0%; width: 40%;">Log In</a> -->
+              {{ form3.submit(class="btn btn-outline-info") }}
+          </form>
+
+      </div>
+      <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+         
+      </div>
+  </div>
+</div>
+</div>
+
+<!--Fire Control-->
+
