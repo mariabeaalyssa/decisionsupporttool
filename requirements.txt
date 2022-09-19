@@ -36,3 +36,4 @@ tzdata==2022.2
 virtualenv==20.16.5
 Werkzeug==2.1.2
 WTForms==3.0.1
+web gunicorn app:server
