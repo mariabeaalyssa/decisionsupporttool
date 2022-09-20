@@ -7,6 +7,8 @@ from flask import render_template, request, redirect, url_for, flash, session
 from flask_login import LoginManager, current_user, login_user, login_required, logout_user
 from .models import *
 from .forms import *
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 
 login_manager = LoginManager()
@@ -21,7 +23,7 @@ def load_user(id):
 @server.route('/', methods=["GET","POST"])
 def index():
 	form = LoginForm()
-	return redirect(url_for('login'), form=form)
+	return redirect(url_for('login', form=form))
 
 @server.route('/login', methods=["GET","POST"])
 def login():
